@@ -1,0 +1,12 @@
+cd ilmomasiina-fk
+git pull
+
+npm run compile
+
+cp dist/* /var/www/ilmo
+cp -r ./* /var/www/ilmo-bäkkäri
+
+chown -R www-data:www-data /var/www/{ilmo,ilmo-bäkkäri}
+
+cd /var/www/ilmo-bäkkäri
+HOME=/tmp npx pm2 restart prod-server

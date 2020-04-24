@@ -1,0 +1,8 @@
+node_modules
+
+bin
+lib
+include
+__pycache__
+
+.vscode
